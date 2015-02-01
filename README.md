@@ -10,7 +10,7 @@ composer require tebru/assert:~0.1
 ```
 
 ## Usage
-You must pass a condition as the first argument.  The second argument is an optional error message.  The third argument is an optional exception type to throw.  The default exception thrown is a `\LogicException`.
+You must pass a condition as the first argument.  The second argument is an optional custom exception to throw instead of \LogicException and the default message.
 
 ```
 <?php
@@ -21,8 +21,7 @@ use Tebru;
 
 Tebru\assert(false);
 Tebru\assert(1 == 2);
-Tebru\assert(false, 'My custom error message');
-Tebru\assert(false, null, \InvalidArgumentException::class);
+Tebru\assert(false, new \InvalidArgumentException('My custom error message'));
 ```
 
 Starting with php 5.6, you can import functions

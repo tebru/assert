@@ -34,6 +34,6 @@ class AssertTest extends PHPUnit_Framework_TestCase
     public function testChangeException()
     {
         $array = [0];
-        Tebru\assert(isset($array['key']), null, \OutOfRangeException::class);
+        Tebru\assert(isset($array['key']), new \OutOfRangeException());
     }
 }

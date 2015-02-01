@@ -5,22 +5,27 @@
 
 namespace Tebru;
 
+use Exception;
+use LogicException;
+
 /**
  * Assert a condition
  *
- * Optionally pass in a failure message and exception to throw on failures
+ * Optionally pass in an exception to throw on failures
  *
  * @param bool $condition
- * @param string $failureMessage
- * @param string $exception
+ * @param Exception $exception
+ * @return null
  */
-function assert($condition, $failureMessage = null, $exception = '\LogicException')
+function assert($condition, Exception $exception = null)
 {
-    if (!$condition) {
-        if (null === $failureMessage) {
-            $failureMessage = 'Failed to assert condition';
-        }
-
-        throw new $exception($failureMessage);
+    if ($condition) {
+        return null;
     }
+
+    if (null === $exception) {
+        $exception = new LogicException('Failed to assert condition');
+    }
+
+    throw $exception;
 }
