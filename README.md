@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/tebru/assert.svg?branch=master)](https://travis-ci.org/tebru/assert)
+[![Coverage Status](https://coveralls.io/repos/tebru/assert/badge.svg?branch=master&service=github)](https://coveralls.io/github/tebru/assert?branch=master)
 
 # Assert
 This is a simple library that contains a function to asset conditions.
