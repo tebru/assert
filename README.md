@@ -34,7 +34,7 @@ Tebru\assert(1 === 2);
 Tebru\assert(false, new \InvalidArgumentException('My custom error message'));
 ```
 
-### Additional Funcitons
+### Additional Functions
 
 There are a number of additional functions that assert specific conditions.
 Each one accepts a message and a variable number of arguments to be used with an sprintf function as the
